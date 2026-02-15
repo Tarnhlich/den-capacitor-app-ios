@@ -7,7 +7,7 @@ workflows:
     environment:
       xcode: latest
       vars:
-        XCODE_WORKSPACE: "App.xcworkspace"
+        XCODE_WORKSPACE: "App.xcodeproj"
         XCODE_SCHEME: "App"
 
     scripts:
