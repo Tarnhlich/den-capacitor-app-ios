@@ -1,0 +1,30 @@
+{
+	"appId": "dataden.serv.app",
+	"appName": "Dataden",
+	"webDir": "build",
+	"server": {
+		"url": "https://homepage.dataden.serv",
+		"cleartext": true
+	},
+	"packageClassList": [
+		"Accessibility",
+		"App",
+		"Browser",
+		"Camera",
+		"Clipboard",
+		"Console",
+		"Device",
+		"Filesystem",
+		"Geolocation",
+		"Haptics",
+		"LocalNotifications",
+		"Modals",
+		"Share",
+		"SplashScreen",
+		"StatusBar",
+		"Toast",
+		"Photos",
+		"Network",
+		"MediaPlugin"
+	]
+}
