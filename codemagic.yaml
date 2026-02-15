@@ -1,24 +1,21 @@
 workflows:
-  ios-build:
-    name: iOS Xcode Build
+  ios-local-build:
+    name: iOS Local Archive
     instance_type: mac_mini_m2
-    max_build_duration: 60
 
     environment:
       xcode: latest
-      vars:
-        XCODE_WORKSPACE: "App.xcodeproj"
-        XCODE_SCHEME: "App"
 
     scripts:
-      - name: Show Xcode version
-        script: xcodebuild -version
-
-      - name: Build IPA
+      - name: Archive only
         script: |
-          xcode-project build-ipa \
-            --workspace "$XCODE_WORKSPACE" \
-            --scheme "$XCODE_SCHEME"
+          xcodebuild \
+            -project ios/App/App.xcodeproj \
+            -scheme App \
+            -configuration Release \
+            -archivePath build/App.xcarchive \
+            archive \
+            CODE_SIGNING_ALLOWED=NO
 
     artifacts:
-      - build/ios/ipa/*.ipa
+      - build/App.xcarchive
